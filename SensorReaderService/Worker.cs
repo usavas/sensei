@@ -32,7 +32,6 @@ public class Worker : BackgroundService
                     Console.WriteLine($"Batch {batchCounter++} completed.");
                 }, stoppingToken);
 
-            Task.Delay(1000, stoppingToken);
         }
 
         Console.WriteLine("read sensors " + batchCounter + " times");
