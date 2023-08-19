@@ -1,4 +1,4 @@
-namespace Sensei.Domain.Sensor;
+namespace Sensei.Domain.SensorFeature;
 
 public class Model
 {

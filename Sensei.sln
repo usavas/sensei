@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sensei.Domain", "Sensei.Domain\Sensei.Domain.csproj", "{8A23DD3E-362D-4DFD-9952-234EF0EE7093}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sensei.Reader", "Sensei.Reader\Sensei.Reader.csproj", "{D44B128C-1344-4B23-A50F-B528A3601D53}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{8A23DD3E-362D-4DFD-9952-234EF0EE7093}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A23DD3E-362D-4DFD-9952-234EF0EE7093}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A23DD3E-362D-4DFD-9952-234EF0EE7093}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D44B128C-1344-4B23-A50F-B528A3601D53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D44B128C-1344-4B23-A50F-B528A3601D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D44B128C-1344-4B23-A50F-B528A3601D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D44B128C-1344-4B23-A50F-B528A3601D53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

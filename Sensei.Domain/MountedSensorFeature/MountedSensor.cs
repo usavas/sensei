@@ -1,8 +1,11 @@
+using Sensei.Domain.SensorFeature;
+
 namespace Sensei.Domain.MountedSensorFeature;
 
 public class MountedSensor
 {
     public int Id { get; set; }
+    public Sensor Sensor { get; set; }
     public string IP { get; set; }
     public int Port { get; set; }
     public string Name { get; set; }

@@ -1,4 +1,4 @@
-using Sensei.Domain.Sensor;
+using Sensei.Domain.SensorFeature;
 
 namespace Sensei.Domain.SensorDataFeature;
 
