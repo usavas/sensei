@@ -4,5 +4,5 @@ namespace Sensei.Application.Ports;
 
 public interface ISensorAnalyzer
 {
-    void Analyze(SensorReadData sensorReadData);
+    Task<SensorDataAnalysis> Analyze(SensorReadData sensorReadData);
 }

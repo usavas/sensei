@@ -6,10 +6,12 @@ namespace Sensei.Reader;
 
 public class SensorReader : ISensorReader
 {
-    public SensorReadData Read(MountedSensor mountedSensor)
+    public async Task<SensorReadData> Read(MountedSensor mountedSensor)
     {
         // read sensor data here
 
+        await Task.Delay(new Random().Next(0, 1000));
+        
         Console.WriteLine($"{mountedSensor.Name}'s Data Read");
         
         return new SensorReadData()

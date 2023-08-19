@@ -5,10 +5,12 @@ namespace Sensei.Analyzer;
 
 public class SensorAnalyzer : ISensorAnalyzer
 {
-    public void Analyze(SensorReadData sensorReadData)
+    public async Task<SensorDataAnalysis> Analyze(SensorReadData sensorReadData)
     {
-        Console.WriteLine($"No alarm generated for {sensorReadData.MountedSensor.Name} {sensorReadData.SensorValue.Value}");
-
-        // save analysis to db
+        await Task.Delay(new Random().Next(0, 1000));
+        
+        return new SensorDataAnalysis(
+            sensorReadData.MountedSensor, 
+            $"Analyzed sensor {sensorReadData.MountedSensor.Name} at value: {sensorReadData.SensorValue.Value}");
     }
 }
