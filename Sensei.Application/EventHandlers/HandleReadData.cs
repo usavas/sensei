@@ -16,7 +16,8 @@ public class HandleReadData : INotificationHandler<SensorDataReadEvent>
     public Task Handle(SensorDataReadEvent notification, CancellationToken cancellationToken)
     {
         // save to database
-        Console.WriteLine($"Saving the {notification.SensorReadData.MountedSensor.Name}'s value {notification.SensorReadData.SensorValue} to db.");
+        Console.WriteLine($"Saving the {notification.SensorReadData.MountedSensor.Name}'s value " +
+                          $"{notification.SensorReadData.SensorValue.Value} to db.");
 
         _mediator.Send(new AnalyzeSensorDataCommand(notification.SensorReadData), cancellationToken);
         

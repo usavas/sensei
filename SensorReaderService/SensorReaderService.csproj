@@ -9,6 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="MediatR" Version="12.1.1" />
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1"/>
     </ItemGroup>
 
@@ -16,5 +17,11 @@
       <Content Include="..\.dockerignore">
         <Link>.dockerignore</Link>
       </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Sensei.Analyzer\Sensei.Analyzer.csproj" />
+      <ProjectReference Include="..\Sensei.Application\Sensei.Application.csproj" />
+      <ProjectReference Include="..\Sensei.Reader\Sensei.Reader.csproj" />
     </ItemGroup>
 </Project>

@@ -1,10 +1,11 @@
 using MediatR;
+using Sensei.Application.Events;
 using Sensei.Application.Ports;
 using Sensei.Domain.SensorDataFeature;
 
 namespace Sensei.Application.RequestHandlers;
 
-public class AnalyzeSensorDataCommand : IRequest
+internal class AnalyzeSensorDataCommand : IRequest
 {
     public readonly SensorReadData SensorReadData;
 
@@ -14,21 +15,27 @@ public class AnalyzeSensorDataCommand : IRequest
     }
 }
 
-public class AnalyzeSensorDataCommandHandler : IRequestHandler<AnalyzeSensorDataCommand>
+internal class AnalyzeSensorDataCommandHandler : IRequestHandler<AnalyzeSensorDataCommand>
 {
     private readonly ISensorAnalyzer _sensorAnalyzer;
+    private readonly IMediator _mediator;
 
-    public AnalyzeSensorDataCommandHandler(ISensorAnalyzer sensorAnalyzer)
+    public AnalyzeSensorDataCommandHandler(ISensorAnalyzer sensorAnalyzer, IMediator mediator)
     {
         _sensorAnalyzer = sensorAnalyzer;
+        _mediator = mediator;
     }
 
-    public Task Handle(AnalyzeSensorDataCommand request, CancellationToken cancellationToken)
+    public async Task Handle(AnalyzeSensorDataCommand request, CancellationToken cancellationToken)
     {
         Console.WriteLine($"Sensor Data analyze command received for {request.SensorReadData.MountedSensor.Name}.");
         
-        _sensorAnalyzer.Analyze(request.SensorReadData);
+        var analysisResult = await _sensorAnalyzer.Analyze(request.SensorReadData);
 
-        return Task.CompletedTask;
+        await _mediator.Publish(new SensorDataAnalyzedEvent(
+            new SensorDataAnalysis(
+                request.SensorReadData.MountedSensor,
+                analysisResult.Result)), 
+            cancellationToken);
     }
 }
