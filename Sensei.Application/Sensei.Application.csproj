@@ -6,8 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+
     <ItemGroup>
-      <ProjectReference Include="..\Sensei.Application\Sensei.Application.csproj" />
       <ProjectReference Include="..\Sensei.Domain\Sensei.Domain.csproj" />
     </ItemGroup>
 

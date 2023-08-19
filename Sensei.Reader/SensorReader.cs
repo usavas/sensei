@@ -1,3 +1,4 @@
+using Sensei.Application.Ports;
 using Sensei.Domain.MountedSensorFeature;
 using Sensei.Domain.SensorDataFeature;
 
