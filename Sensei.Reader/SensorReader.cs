@@ -6,10 +6,13 @@ namespace Sensei.Reader;
 
 public class SensorReader : ISensorReader
 {
-    public SensorData Read(MountedSensor mountedSensor)
+    public SensorReadData Read(MountedSensor mountedSensor)
     {
-        // dummy logic
-        return new SensorData()
+        // read sensor data here
+
+        Console.WriteLine($"{mountedSensor.Name}'s Data Read");
+        
+        return new SensorReadData()
         {
             SensorValue = new SensorValue()
             {

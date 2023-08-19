@@ -5,10 +5,16 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
-
-
+    
     <ItemGroup>
       <ProjectReference Include="..\Sensei.Domain\Sensei.Domain.csproj" />
     </ItemGroup>
-
+    
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="12.1.1" />
+    </ItemGroup>
+    
+    
+    
+    
 </Project>

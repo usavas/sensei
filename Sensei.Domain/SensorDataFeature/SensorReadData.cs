@@ -2,7 +2,7 @@ using Sensei.Domain.MountedSensorFeature;
 
 namespace Sensei.Domain.SensorDataFeature;
 
-public class SensorData
+public class SensorReadData
 {
     public MountedSensor MountedSensor  { get; set; }
     public DateTime TimeRead { get; set; }

@@ -5,5 +5,5 @@ namespace Sensei.Application.Ports;
 
 public interface ISensorReader
 {
-    SensorData Read(MountedSensor mountedSensor);
+    SensorReadData Read(MountedSensor mountedSensor);
 }
